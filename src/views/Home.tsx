@@ -7,9 +7,9 @@ const Home = () => {
       <img
         src="assets/images/blur.svg"
         alt=""
-        className="hidden md:block opacity-40 h-full absolute -z-10"
+        className="hidden md:block h-full opacity-50 absolute -z-10"
       />
-      <div className="absolute inset-0 bg-back bg-center">
+      <div className="absolute inset-0 bg-grid bg-center">
         {/* Main Conents */}
         <div className=" flex items-center h-full z-50">
           <Slider />

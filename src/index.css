@@ -10,6 +10,9 @@
     @apply md:text-2xl text-xl md:font-bold font-semibold tracking-wide transition;
   }
   .slide {
-    @apply max-w-2xl lg:max-w-3xl h-96 mx-auto backdrop-blur-md hidden md:block relative;
+    @apply max-w-2xl lg:max-w-4xl h-96 mx-auto backdrop-blur-md hidden md:block relative;
+  }
+  .input {
+    @apply w-full bg-white px-5 py-3.5 placeholder-gray-500/50 outline-none focus:bg-white !rounded-xl;
   }
 }

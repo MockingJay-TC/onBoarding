@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 const SimpleSlider = () => {
   const settings = {
@@ -14,35 +14,75 @@ const SimpleSlider = () => {
       <Slider {...settings}>
         <div className="!flex justify-center items-center gap-8 p-5">
           <Player
-            className=" inset-0"
             autoplay
             loop
             src="assets/car-rent.json"
             style={{ height: "300px", width: "300px" }}
           ></Player>
           <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
-            voluptatem tempora impedit magni asperiores cumque, possimus vitae
-            nostrum magnam maxime dolorem. Libero, repudiandae quis, nemo, odio
-            optio assumenda ex sit magni vero natus harum tempore! Unde, aliquam
-            quas consectetur nesciunt inventore quibusdam asperiores velit
-            optio. Sed necessitatibus tenetur modi et?
+            <h1 className="font-semibold text-3xl text-sunshine tracking-wider my-3">
+              City Tour
+            </h1>
+            <p className="text-gray-400 tracking-wide">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
+              molestiae voluptatem quibusdam illum laudantium nemo officia quod
+              voluptates cumque. Numquam ea voluptatem vel repellendus cumque,
+              neque dolores, distinctio molestiae, voluptas tempora vitae a
+              soluta quis inventore odit ipsam! Nobis temporibus perspiciatis
+              iusto ex laborum repellat numquam.
+            </p>
+            <div className="w-fit !text-corn py-2 px-4 text-center mt-5 text-xl rounded transition bg-white tracking-wide">
+              Excited!!!
+            </div>
           </div>
         </div>
-        <div>
-          <h3>2</h3>
+        <div className="!flex justify-center items-center gap-8 p-5">
+          <Player
+            autoplay
+            loop
+            src="assets/car-rent.json"
+            style={{ height: "300px", width: "300px" }}
+          ></Player>
+          <div>
+            <h1 className="font-semibold text-3xl text-sunshine tracking-wider my-3">
+              Wedding Party
+            </h1>
+            <p className="text-gray-400 tracking-wide">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
+              molestiae voluptatem quibusdam illum laudantium nemo officia quod
+              voluptates cumque. Numquam ea voluptatem vel repellendus cumque,
+              neque dolores, distinctio molestiae, voluptas tempora vitae a
+              soluta quis inventore odit ipsam! Nobis temporibus perspiciatis
+              iusto ex laborum repellat numquam.
+            </p>
+            <div className="w-fit !text-corn py-2 px-4 text-center mt-5 text-xl rounded transition bg-white tracking-wide">
+              Excited!!!
+            </div>
+          </div>
         </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
+        <div className="!flex justify-center items-center gap-8 p-5">
+          <Player
+            autoplay
+            loop
+            src="assets/car-rent.json"
+            style={{ height: "300px", width: "300px" }}
+          ></Player>
+          <div>
+            <h1 className="font-semibold text-3xl text-sunshine tracking-wider my-3">
+              City Transfer
+            </h1>
+            <p className="text-gray-400 tracking-wide">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
+              molestiae voluptatem quibusdam illum laudantium nemo officia quod
+              voluptates cumque. Numquam ea voluptatem vel repellendus cumque,
+              neque dolores, distinctio molestiae, voluptas tempora vitae a
+              soluta quis inventore odit ipsam! Nobis temporibus perspiciatis
+              iusto ex laborum repellat numquam.
+            </p>
+            <div className="w-fit !text-corn py-2 px-4 text-center mt-5 text-xl rounded transition bg-white tracking-wide">
+              Excited!!!
+            </div>
+          </div>
         </div>
       </Slider>
     </div>

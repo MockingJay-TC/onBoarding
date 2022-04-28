@@ -1,26 +1,66 @@
 /* This example requires Tailwind CSS v2.0+ */
-import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
+import React, { Fragment, useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-
-const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
-];
+import { motion } from "framer-motion";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
 const Nav = ({ childComp }: { childComp: JSX.Element }) => {
+  const location = useLocation();
+  const [sign, setSign] = useState(false);
+  const [log, setLog] = useState(false);
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setSign(true);
+      setLog(false);
+    } else {
+      setLog(true);
+      setSign(false);
+    }
+  }, [location.pathname]);
+
+  const navigation = [
+    { name: "SignUp", href: "/", current: sign },
+    { name: "Login", href: "/login", current: log },
+  ];
+
+  const logoVariant = {
+    hidden: {
+      opacity: 0,
+      x: -100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 2,
+        duration: 2,
+      },
+    },
+  };
+
+  const linkVariant = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 2,
+        duration: 2,
+      },
+    },
+  };
   return (
     <div className="h-screen">
       <Disclosure
         as="nav"
-        className="bg-transparent backdrop-blur-sm fixed w-full z-50 shadow py-1 md:py-4"
+        className="bg-transparent backdrop-blur-lg md:backdrop-blur-sm fixed w-full z-50 shadow py-1 md:py-4"
       >
         {({ open }) => (
           <>
@@ -40,7 +80,14 @@ const Nav = ({ childComp }: { childComp: JSX.Element }) => {
                 <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                   <div className="flex-shrink-0 flex items-center">
                     <Link to="/">
-                      <h1 className="logo">Imperial Shuttle</h1>
+                      <motion.h1
+                        variants={logoVariant}
+                        initial="hidden"
+                        animate="visible"
+                        className="logo"
+                      >
+                        Imperial Shuttle
+                      </motion.h1>
                     </Link>
                   </div>
                   <div className="hidden sm:block sm:ml-6">
@@ -57,7 +104,13 @@ const Nav = ({ childComp }: { childComp: JSX.Element }) => {
                           )}
                           aria-current={item.current ? "page" : undefined}
                         >
-                          {item.name}
+                          <motion.span
+                            variants={linkVariant}
+                            initial="hidden"
+                            animate="visible"
+                          >
+                            {item.name}
+                          </motion.span>
                         </Link>
                       ))}
                     </div>
@@ -141,8 +194,8 @@ const Nav = ({ childComp }: { childComp: JSX.Element }) => {
                     href={item.href}
                     className={classNames(
                       item.current
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        ? "bg-sunshine text-white"
+                        : "text-gray-800 hover:bg-sunshine/30 hover:text-white",
                       "block px-3 py-2 rounded-md text-base font-medium"
                     )}
                     aria-current={item.current ? "page" : undefined}

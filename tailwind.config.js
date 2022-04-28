@@ -4,9 +4,11 @@ module.exports = {
     extend: {
       backgroundImage: {
         back: "url('myBack.svg')",
+        grid: "url('ttten.svg')"
       },
       colors: {
         sunshine: "#ec3323",
+        corn: "#008aff"
       },
       boxShadow: {
         boxie:
