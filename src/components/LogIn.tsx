@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate, Link } from "react-router-dom";
 
-const SignUp = () => {
+const LogIn = () => {
   const navigate = useNavigate();
 
   const onBoarding = () => {
@@ -11,7 +11,7 @@ const SignUp = () => {
   const signUpVariants = {
     hidden: {
       opacity: 0,
-      x: -50,
+      y: -50,
     },
     visible: {
       opacity: 1,
@@ -35,7 +35,7 @@ const SignUp = () => {
       >
         <div className="mx-auto xl:max-w-xs 2xl:max-w-md">
           <h1 className="font-semibold md:text-3xl text-xl text-sunshine tracking-wide leading-10">
-            Sign Up
+            Log In
           </h1>
           <div className="divide-y divide-gray-300/50">
             <div className="space-y-6 py-4 2xl:py-8 text-base leading-7 text-gray-600">
@@ -44,22 +44,6 @@ const SignUp = () => {
                 best car for your convinence.
               </p>
               <div className="3xl:space-y-4 space-y-2">
-                <div className="md:grid grid-cols-2 gap-2">
-                  <label className="inline-block w-full border-2 border-corn/40 rounded-xl">
-                    <input
-                      type="text"
-                      placeholder="First Name"
-                      className="input"
-                    />
-                  </label>
-                  <label className="inline-block w-full border-2 border-corn/40 rounded-xl">
-                    <input
-                      type="text"
-                      placeholder="Last Name"
-                      className="input"
-                    />
-                  </label>
-                </div>
                 <label className="inline-block w-full border-2 border-corn/40 rounded-xl">
                   <input type="email" placeholder="Email" className="input" />
                 </label>
@@ -72,10 +56,11 @@ const SignUp = () => {
                 </label>
               </div>
               <div>
-                Already having an account?{" "}
-                <Link to="/login" className="text-sunshine font-semibold">
-                  Login
+                Not a partner?{" "}
+                <Link to="/" className="text-sunshine font-semibold">
+                  Signup{" "}
                 </Link>
+                now
               </div>
               <p>
                 Perfect for learning how the framework works, prototyping a new
@@ -87,7 +72,7 @@ const SignUp = () => {
                 onClick={() => onBoarding()}
                 className="text-xl py-2 3xl:py-3 3xl:px-4 px-2 text-center bg-corn text-white transition duration-100 delay-70 hover:shadow-lg shadow-sm cursor-pointer rounded-lg hover:scale-100 3xl:hover:tracking-wider hover:tracking-wide"
               >
-                Start Onboarding
+                Log in
               </div>
             </div>
           </div>
@@ -97,4 +82,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default LogIn;

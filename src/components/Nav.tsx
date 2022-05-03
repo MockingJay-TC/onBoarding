@@ -13,6 +13,7 @@ const Nav = ({ childComp }: { childComp: JSX.Element }) => {
   const location = useLocation();
   const [sign, setSign] = useState(false);
   const [log, setLog] = useState(false);
+  const [onBoard, setOnboard] = useState(false);
 
   useEffect(() => {
     if (location.pathname === "/") {
@@ -24,6 +25,13 @@ const Nav = ({ childComp }: { childComp: JSX.Element }) => {
     }
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (location.pathname === "/onboard" || "/form") {
+      setOnboard(true);
+    } else {
+      setOnboard(false);
+    }
+  }, [location.pathname]);
   const navigation = [
     { name: "SignUp", href: "/", current: sign },
     { name: "Login", href: "/login", current: log },
@@ -38,8 +46,9 @@ const Nav = ({ childComp }: { childComp: JSX.Element }) => {
       opacity: 1,
       x: 0,
       transition: {
-        delay: 2,
-        duration: 2,
+        type: "fade",
+        delay: 0.2,
+        duration: 1.5,
       },
     },
   };
@@ -51,16 +60,16 @@ const Nav = ({ childComp }: { childComp: JSX.Element }) => {
     visible: {
       opacity: 1,
       transition: {
-        delay: 2,
+        delay: 0.8,
         duration: 2,
       },
     },
   };
   return (
-    <div className="h-screen">
+    <div className="h-full w-full relative">
       <Disclosure
         as="nav"
-        className="bg-transparent backdrop-blur-lg md:backdrop-blur-sm fixed w-full z-50 shadow py-1 md:py-4"
+        className="bg-transparent backdrop-blur-sm 2xl:fixed w-full relative z-50 shadow py-1 md:py-4"
       >
         {({ open }) => (
           <>
@@ -84,7 +93,7 @@ const Nav = ({ childComp }: { childComp: JSX.Element }) => {
                         variants={logoVariant}
                         initial="hidden"
                         animate="visible"
-                        className="logo"
+                        className="logo "
                       >
                         Imperial Shuttle
                       </motion.h1>
@@ -92,27 +101,42 @@ const Nav = ({ childComp }: { childComp: JSX.Element }) => {
                   </div>
                   <div className="hidden sm:block sm:ml-6">
                     <div className="flex space-x-4">
-                      {navigation.map((item) => (
-                        <Link
-                          key={item.name}
-                          to={item.href}
-                          className={classNames(
-                            item.current
-                              ? "bg-sunshine text-white"
-                              : "text-gray-800 hover:bg-sunshine/30 hover:text-white",
-                            "px-3 py-2 rounded-md text-sm font-medium"
-                          )}
-                          aria-current={item.current ? "page" : undefined}
+                      {onBoard ? (
+                        <motion.div
+                          variants={linkVariant}
+                          initial="hidden"
+                          animate="visible"
                         >
-                          <motion.span
-                            variants={linkVariant}
-                            initial="hidden"
-                            animate="visible"
+                          <Link
+                            to="/onboard"
+                            className="bg-sunshine text-white px-3 py-2 rounded-md text-sm font-medium flex"
                           >
-                            {item.name}
-                          </motion.span>
-                        </Link>
-                      ))}
+                            OnBoard
+                          </Link>
+                        </motion.div>
+                      ) : (
+                        navigation.map((item) => (
+                          <Link
+                            key={item.name}
+                            to={item.href}
+                            className={classNames(
+                              item.current
+                                ? "bg-sunshine text-white"
+                                : "text-gray-800 hover:bg-sunshine/30 hover:text-white",
+                              "px-3 py-2 rounded-md text-sm font-medium"
+                            )}
+                            aria-current={item.current ? "page" : undefined}
+                          >
+                            <motion.span
+                              variants={linkVariant}
+                              initial="hidden"
+                              animate="visible"
+                            >
+                              {item.name}
+                            </motion.span>
+                          </Link>
+                        ))
+                      )}
                     </div>
                   </div>
                 </div>
@@ -120,7 +144,7 @@ const Nav = ({ childComp }: { childComp: JSX.Element }) => {
                   {/* Profile dropdown */}
                   <Menu as="div" className="ml-3 relative">
                     <div>
-                      <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ec342338]">
+                      <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ec342338] ">
                         <span className="sr-only">Open user menu</span>
                         <img
                           className="md:h-10 md:w-10 h-7 w-7 rounded-full"
@@ -138,7 +162,7 @@ const Nav = ({ childComp }: { childComp: JSX.Element }) => {
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
                         <Menu.Item>
                           {({ active }) => (
                             <Link

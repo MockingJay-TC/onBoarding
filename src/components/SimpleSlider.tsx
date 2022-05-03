@@ -17,13 +17,13 @@ const SimpleSlider = () => {
             autoplay
             loop
             src="assets/car-rent.json"
-            style={{ height: "300px", width: "300px" }}
+            className=" lottie"
           ></Player>
           <div>
             <h1 className="font-semibold text-3xl text-sunshine tracking-wider my-3">
               City Tour
             </h1>
-            <p className="text-gray-400 tracking-wide">
+            <p className="text-gray-600 tracking-wide">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
               molestiae voluptatem quibusdam illum laudantium nemo officia quod
               voluptates cumque. Numquam ea voluptatem vel repellendus cumque,
@@ -41,13 +41,13 @@ const SimpleSlider = () => {
             autoplay
             loop
             src="assets/car-rent.json"
-            style={{ height: "300px", width: "300px" }}
+            className=" lottie"
           ></Player>
           <div>
             <h1 className="font-semibold text-3xl text-sunshine tracking-wider my-3">
               Wedding Party
             </h1>
-            <p className="text-gray-400 tracking-wide">
+            <p className="text-gray-600 tracking-wide">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
               molestiae voluptatem quibusdam illum laudantium nemo officia quod
               voluptates cumque. Numquam ea voluptatem vel repellendus cumque,
@@ -65,13 +65,13 @@ const SimpleSlider = () => {
             autoplay
             loop
             src="assets/car-rent.json"
-            style={{ height: "300px", width: "300px" }}
+            className=" lottie"
           ></Player>
           <div>
             <h1 className="font-semibold text-3xl text-sunshine tracking-wider my-3">
               City Transfer
             </h1>
-            <p className="text-gray-400 tracking-wide">
+            <p className="text-gray-600 tracking-wide">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
               molestiae voluptatem quibusdam illum laudantium nemo officia quod
               voluptates cumque. Numquam ea voluptatem vel repellendus cumque,

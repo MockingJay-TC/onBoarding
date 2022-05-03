@@ -2,13 +2,18 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      screens: {
+        "3xl": "1600px",
+        "4xl": "1920",
+      },
       backgroundImage: {
         back: "url('myBack.svg')",
-        grid: "url('ttten.svg')"
+        grid: "url('ttten.svg')",
+        blur: "url('blur.svg')",
       },
       colors: {
         sunshine: "#ec3323",
-        corn: "#008aff"
+        corn: "#008aff",
       },
       boxShadow: {
         boxie:
