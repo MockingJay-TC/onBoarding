@@ -33,7 +33,7 @@ const SignUp = () => {
         animate="visible"
         className="relative md:bg-white bg-transparent backdrop-blur-sm px-6 pt-8 pb-8 md:shadow-boxie sm:mx-auto max-w-lg sm:rounded-xl sm:px-10 "
       >
-        <div className="mx-auto xl:max-w-xs 2xl:max-w-md">
+        <div className="mx-auto xl:max-w-xs 2xl:max-w-sm 3xl:max-w-md">
           <h1 className="font-semibold md:text-3xl text-xl text-sunshine tracking-wide leading-10">
             Sign Up
           </h1>
@@ -77,10 +77,6 @@ const SignUp = () => {
                   Login
                 </Link>
               </div>
-              <p>
-                Perfect for learning how the framework works, prototyping a new
-                idea, or creating a demo to share online.
-              </p>
             </div>
             <div className="3xl:pt-5 pt-3 text-base font-semibold 3xl:leading-7 leading-7">
               <div

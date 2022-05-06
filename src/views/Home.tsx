@@ -4,6 +4,7 @@ import Slider from "../components/SimpleSlider";
 const Home = () => {
   return (
     <div className="home overflow-hidden">
+      
       <img
         src="assets/images/blur.svg"
         alt=""

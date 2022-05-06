@@ -26,7 +26,7 @@ const Nav = ({ childComp }: { childComp: JSX.Element }) => {
   }, [location.pathname]);
 
   useEffect(() => {
-    if (location.pathname === "/onboard" || "/form") {
+    if (location.pathname === "/onboard" || location.pathname === "/form") {
       setOnboard(true);
     } else {
       setOnboard(false);
